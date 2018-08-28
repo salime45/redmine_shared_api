@@ -1,6 +1,7 @@
 # Plugin's routes
 # See: http://guides.rubyonrails.org/routing.html
   match 'shared/projects', :controller => 'projects_api', :action => 'index', :via => [:get]
+  match 'shared/issues', :controller => 'issues_api', :action => 'index', :via => [:get]
   match 'shared/custom_fields', :controller => 'custom_fields_api', :action => 'index', :via => [:get]
   match 'shared/users', :controller => 'users_api', :action => 'index', :via => [:get]
   match 'shared/settings', :controller => 'settings_api', :action => 'index', :via => [:get]
