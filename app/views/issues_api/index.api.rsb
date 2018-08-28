@@ -1,0 +1,16 @@
+api.array :issues, api_meta(:total_count => @project_count, :offset => @offset, :limit => @limit) do
+  @issues.each do |issue|
+    api.issue do
+      api.id          issue.id
+      api.subject        issue.subject
+      api.description issue.description
+      api.status      issue.status
+
+      render_api_custom_values issue.visible_custom_field_values, api
+      render_api_includes(issue, api)
+
+      api.created_on  issue.created_on
+      api.updated_on  issue.updated_on
+    end
+  end
+end

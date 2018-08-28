@@ -7,7 +7,7 @@ class IssuesApiController < ApplicationController
   helper :issues
   
   def index
-    scope = Issue.id.sorted
+    scope = Issue.recently_updated
   
     respond_to do |format|      
       format.api  {
